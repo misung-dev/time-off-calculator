@@ -43,5 +43,11 @@ function calculateMonthly() {
   const result = `퇴근 시간: ${workEndHour
     .toString()
     .padStart(2, "0")}:${workEndMinute.toString().padStart(2, "0")}`;
-  document.getElementById("monthlyResult").innerText = result;
+
+  if (
+    document.getElementById("pastHours").value.length !== 0 &&
+    document.getElementById("startHour").value.length !== 0 &&
+    document.getElementById("monthlyTarget").value.length !== 0
+  )
+    document.getElementById("monthlyResult").innerText = result;
 }
