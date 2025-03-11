@@ -8,8 +8,9 @@ function calculateMonthly() {
   const startHour = parseFloat(document.getElementById("startHour").value) || 0;
   const startMinute =
     parseFloat(document.getElementById("startMinute").value) || 0;
-  const monthlyTarget =
-    parseFloat(document.getElementById("monthlyTarget").value) || 160;
+  const monthlyTarget = parseFloat(
+    document.getElementById("monthlyTarget").value
+  );
   const breakTime =
     parseFloat(document.getElementById("breakTime").value) || 60;
 

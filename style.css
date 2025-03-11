@@ -17,7 +17,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 30px;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   transition: all 0.3s ease;
 }
 
@@ -103,7 +103,7 @@ select {
   padding: 10px;
   border: 2px solid transparent;
   border-radius: 10px;
-  background-color: #f8f9fa;
+  background-color: white;
   text-align: center;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -159,7 +159,6 @@ select {
   }
 }
 
-/* 부드러운 애니메이션 */
 @keyframes fadeIn {
   from {
     opacity: 0;
