@@ -54,6 +54,11 @@ label {
   gap: 10px;
 }
 
+.time-input input {
+  flex: 1;
+  width: 0;
+}
+
 input,
 select {
   flex: 1;
@@ -146,16 +151,10 @@ select {
   background-color: white;
 }
 
-/* 반응형 디자인 */
 @media (max-width: 480px) {
   .container {
     padding: 20px;
     margin: 0 10px;
-  }
-
-  .time-input {
-    flex-direction: column;
-    gap: 10px;
   }
 }
 
