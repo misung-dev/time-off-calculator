@@ -14,14 +14,30 @@ function calculateMonthly() {
   const breakTime =
     parseFloat(document.getElementById("breakTime").value) || 60;
 
+  const resultElement = document.getElementById("monthlyResult");
+
+  // 필수 입력값 확인
+  const allInputFilled =
+    document.getElementById("pastHours").value.length !== 0 &&
+    document.getElementById("startHour").value.length !== 0 &&
+    document.getElementById("monthlyTarget").value.length !== 0;
+
+  // 필수 입력값이 없으면 기본 상태
+  if (!allInputFilled) {
+    resultElement.innerText = "퇴근 시간: --:--";
+    resultElement.classList.remove("completed", "insufficient");
+    return;
+  }
+
   // 어제까지 근무한 시간 (분 단위로 변환)
   const workedMinutes = pastHours * 60 + pastMinutes;
   const targetMinutes = monthlyTarget * 60;
   const remainingMinutes = targetMinutes - workedMinutes;
 
   if (remainingMinutes <= 0) {
-    document.getElementById("monthlyResult").innerText =
-      "이미 월간 근무시간을 채웠습니다!";
+    resultElement.innerHTML = "이미 근무시간을 채웠습니다!";
+    resultElement.classList.remove("insufficient");
+    resultElement.classList.add("completed");
     return;
   }
 
@@ -44,10 +60,7 @@ function calculateMonthly() {
     .toString()
     .padStart(2, "0")}:${workEndMinute.toString().padStart(2, "0")}`;
 
-  if (
-    document.getElementById("pastHours").value.length !== 0 &&
-    document.getElementById("startHour").value.length !== 0 &&
-    document.getElementById("monthlyTarget").value.length !== 0
-  )
-    document.getElementById("monthlyResult").innerText = result;
+  resultElement.innerText = result;
+  resultElement.classList.remove("completed");
+  resultElement.classList.add("insufficient");
 }

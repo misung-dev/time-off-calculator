@@ -138,6 +138,18 @@ select {
   background-color: white;
 }
 
+#monthlyResult.completed {
+  background-color: #e6f3e6;
+  color: #2e8b57;
+  animation: pulse 1s infinite alternate;
+}
+
+#monthlyResult.insufficient {
+  background-color: #ffebee;
+  color: #d32f2f;
+  animation: pulse 1s infinite alternate;
+}
+
 .input-group.full-width {
   display: flex;
   flex-direction: column;
